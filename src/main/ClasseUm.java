@@ -14,5 +14,7 @@ public class ClasseUm {
         System.out.println("Ana Flávia");
         
         System.out.println("Mirela");
+        
+        System.out.println("Thalis");
     }
 }
