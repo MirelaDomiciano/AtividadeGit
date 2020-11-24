@@ -12,5 +12,7 @@ package main;
 public class ClasseDois {
     public static void main(String[] args) {
         System.out.println("Thalis");
+        
+        System.out.println("Mirela");
     }
 }
