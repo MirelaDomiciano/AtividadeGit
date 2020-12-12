@@ -5,6 +5,7 @@
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
             <name>AtividadeGit</name>
             <source-roots>
+                <root id="src.relatorios.dir"/>
                 <root id="src.dir" name="Pacote de Código Fonte"/>
             </source-roots>
             <test-roots/>
