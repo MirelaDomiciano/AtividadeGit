@@ -5,15 +5,13 @@
     <class>view.Cliente</class>
     <class>view.Funcionario</class>
     <class>view.Compra</class>
+    <class>view.Usuario</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bd_relatorio?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="vertrigo"/>
-      <property name="hibernate.hbm2ddl.auto" value="update
-
-"/>
-      
+      <property name="javax.persistence.jdbc.password" value="xampp"/>
+      <property name="hibernate.hbm2ddl.auto" value="update  "/>
     </properties>
   </persistence-unit>
 </persistence>
