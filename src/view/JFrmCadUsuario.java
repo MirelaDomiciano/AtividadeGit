@@ -13,10 +13,7 @@ import javax.persistence.RollbackException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Mirela Domiciano
- */
+
 public class JFrmCadUsuario extends JPanel {
     
     public JFrmCadUsuario() {

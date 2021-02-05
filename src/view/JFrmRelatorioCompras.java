@@ -15,10 +15,7 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.view.JasperViewer;
 import util.Conexao;
 
-/**
- *
- * @author Mirela Domiciano
- */
+
 public class JFrmRelatorioCompras extends javax.swing.JFrame {
 
     /**

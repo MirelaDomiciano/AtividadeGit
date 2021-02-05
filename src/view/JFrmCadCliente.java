@@ -20,10 +20,7 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.view.JasperViewer;
 
-/**
- *
- * @author Mirela Domiciano
- */
+
 public class JFrmCadCliente extends JPanel {
     
     public JFrmCadCliente() {

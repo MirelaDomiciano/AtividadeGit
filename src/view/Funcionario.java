@@ -22,10 +22,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-/**
- *
- * @author Mirela Domiciano
- */
 @Entity
 @Table(name = "funcionario", catalog = "bd_relatorio", schema = "")
 

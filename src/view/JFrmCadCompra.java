@@ -20,10 +20,7 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.view.JasperViewer;
 
-/**
- *
- * @author Mirela Domiciano
- */
+
 public class JFrmCadCompra extends JPanel {
     
     public JFrmCadCompra() {
@@ -62,7 +59,6 @@ public class JFrmCadCompra extends JPanel {
         funcionarioidFuncionarioLabel = new javax.swing.JLabel();
         idCompraField = new javax.swing.JTextField();
         valorField = new javax.swing.JTextField();
-        descontoField = new javax.swing.JTextField();
         produtoField = new javax.swing.JTextField();
         quantidadeField = new javax.swing.JTextField();
         saveButton = new javax.swing.JButton();
@@ -72,6 +68,8 @@ public class JFrmCadCompra extends JPanel {
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        dateCellRender1 = new render.DateCellRender();
 
         FormListener formListener = new FormListener();
 
@@ -81,9 +79,6 @@ public class JFrmCadCompra extends JPanel {
         columnBinding.setColumnClass(Integer.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${valor}"));
         columnBinding.setColumnName("Valor");
-        columnBinding.setColumnClass(Float.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${desconto}"));
-        columnBinding.setColumnName("Desconto");
         columnBinding.setColumnClass(Float.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${produto}"));
         columnBinding.setColumnName("Produto");
@@ -97,15 +92,21 @@ public class JFrmCadCompra extends JPanel {
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${funcionario}"));
         columnBinding.setColumnName("Funcionario");
         columnBinding.setColumnClass(view.Funcionario.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${dataCompra}"));
+        columnBinding.setColumnName("Data Compra");
+        columnBinding.setColumnClass(java.util.Date.class);
         bindingGroup.addBinding(jTableBinding);
         jTableBinding.bind();
         masterScrollPane.setViewportView(masterTable);
+        if (masterTable.getColumnModel().getColumnCount() > 0) {
+            masterTable.getColumnModel().getColumn(6).setCellRenderer(dateCellRender1);
+        }
 
         idCompraLabel.setText("Id Compra:");
 
         valorLabel.setText("Valor:");
 
-        descontoLabel.setText("Desconto:");
+        descontoLabel.setText("Data");
 
         produtoLabel.setText("Produto:");
 
@@ -125,12 +126,6 @@ public class JFrmCadCompra extends JPanel {
         binding.setSourceUnreadableValue("null");
         bindingGroup.addBinding(binding);
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), valorField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.desconto}"), descontoField, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        binding.setSourceUnreadableValue("null");
-        bindingGroup.addBinding(binding);
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), descontoField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.produto}"), produtoField, org.jdesktop.beansbinding.BeanProperty.create("text"));
@@ -178,6 +173,17 @@ public class JFrmCadCompra extends JPanel {
         jButton1.setText("Relatório");
         jButton1.addActionListener(formListener);
 
+        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.dataCompra}"), jFormattedTextField1, org.jdesktop.beansbinding.BeanProperty.create("value"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), jFormattedTextField1, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        jFormattedTextField1.addActionListener(formListener);
+
+        dateCellRender1.setText("dateCellRender1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -187,6 +193,8 @@ public class JFrmCadCompra extends JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(dateCellRender1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(newButton)
@@ -200,20 +208,20 @@ public class JFrmCadCompra extends JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(idCompraLabel)
                             .addComponent(valorLabel)
-                            .addComponent(descontoLabel)
                             .addComponent(produtoLabel)
                             .addComponent(quantidadeLabel)
                             .addComponent(clienteidClienteLabel)
-                            .addComponent(funcionarioidFuncionarioLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(funcionarioidFuncionarioLabel)
+                            .addComponent(descontoLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(idCompraField, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
-                            .addComponent(valorField, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
-                            .addComponent(descontoField, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
-                            .addComponent(produtoField, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
-                            .addComponent(quantidadeField, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
+                            .addComponent(idCompraField, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
+                            .addComponent(produtoField, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
+                            .addComponent(quantidadeField, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
                             .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(valorField)
+                            .addComponent(jFormattedTextField1)))
                     .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -236,7 +244,7 @@ public class JFrmCadCompra extends JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(descontoLabel)
-                    .addComponent(descontoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(produtoLabel)
@@ -259,7 +267,8 @@ public class JFrmCadCompra extends JPanel {
                     .addComponent(refreshButton)
                     .addComponent(deleteButton)
                     .addComponent(newButton)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(dateCellRender1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -285,6 +294,9 @@ public class JFrmCadCompra extends JPanel {
             }
             else if (evt.getSource() == jButton1) {
                 JFrmCadCompra.this.jButton1ActionPerformed(evt);
+            }
+            else if (evt.getSource() == jFormattedTextField1) {
+                JFrmCadCompra.this.jFormattedTextField1ActionPerformed(evt);
             }
         }
     }// </editor-fold>//GEN-END:initComponents
@@ -351,11 +363,15 @@ public class JFrmCadCompra extends JPanel {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel clienteidClienteLabel;
+    private render.DateCellRender dateCellRender1;
     private javax.swing.JButton deleteButton;
-    private javax.swing.JTextField descontoField;
     private javax.swing.JLabel descontoLabel;
     private javax.persistence.EntityManager entityManager;
     private javax.persistence.EntityManager entityManager0;
@@ -367,6 +383,7 @@ public class JFrmCadCompra extends JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private java.util.List<view.Compra> list;
     private java.util.List<Cliente> listCliente;
     private javax.swing.JScrollPane masterScrollPane;

@@ -8,6 +8,7 @@ package view;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,12 +19,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 import javax.persistence.Transient;
 
-/**
- *
- * @author Mirela Domiciano
- */
+
 @Entity
 @Table(name = "compra", catalog = "bd_relatorio", schema = "")
 
@@ -42,14 +41,16 @@ public class Compra implements Serializable {
     @Column(name = "valor")
     private Float valor;
     
-    @Column(name = "desconto")
-    private Float desconto;
     
     @Column(name = "produto")
     private String produto;
     
     @Column(name = "quantidade")
     private Integer quantidade;
+    
+    @Column(name = "dataCompra")
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dataCompra;
     
     @ManyToOne
     private Cliente cliente;
@@ -84,15 +85,6 @@ public class Compra implements Serializable {
         changeSupport.firePropertyChange("valor", oldValor, valor);
     }
 
-    public Float getDesconto() {
-        return desconto;
-    }
-
-    public void setDesconto(Float desconto) {
-        Float oldDesconto = this.desconto;
-        this.desconto = desconto;
-        changeSupport.firePropertyChange("desconto", oldDesconto, desconto);
-    }
 
     public String getProduto() {
         return produto;
@@ -114,6 +106,17 @@ public class Compra implements Serializable {
         changeSupport.firePropertyChange("quantidade", oldQuantidade, quantidade);
     }
 
+    public Date getDataCompra() {
+        return dataCompra;
+    }
+
+    public void setDataCompra(Date dataCompra) {
+        Date oldDataCompra = this.dataCompra;
+        this.dataCompra = dataCompra;
+        changeSupport.firePropertyChange("dataCompra", oldDataCompra, dataCompra);
+    }
+    
+    
     public Cliente getCliente() {
         return cliente;
     }

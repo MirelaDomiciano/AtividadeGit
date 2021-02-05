@@ -19,10 +19,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-/**
- *
- * @author Mirela Domiciano
- */
+
 @Entity
 @Table(name = "usuario", catalog = "bd_relatorio", schema = "")
 public class Usuario implements Serializable {

@@ -95,6 +95,8 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="dateCellRender1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="newButton" linkSize="1" min="-2" max="-2" attributes="0"/>
@@ -109,21 +111,21 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="idCompraLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="valorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="descontoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="produtoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="quantidadeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="clienteidClienteLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="funcionarioidFuncionarioLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="descontoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="63" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="idCompraField" alignment="0" pref="498" max="32767" attributes="0"/>
-                          <Component id="valorField" alignment="0" pref="498" max="32767" attributes="0"/>
-                          <Component id="descontoField" alignment="0" pref="498" max="32767" attributes="0"/>
-                          <Component id="produtoField" alignment="0" pref="498" max="32767" attributes="0"/>
-                          <Component id="quantidadeField" alignment="0" pref="498" max="32767" attributes="0"/>
+                          <Component id="idCompraField" alignment="0" pref="440" max="32767" attributes="0"/>
+                          <Component id="produtoField" alignment="0" pref="440" max="32767" attributes="0"/>
+                          <Component id="quantidadeField" alignment="0" pref="440" max="32767" attributes="0"/>
                           <Component id="jComboBox1" max="32767" attributes="0"/>
                           <Component id="jComboBox2" alignment="1" max="32767" attributes="0"/>
+                          <Component id="valorField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jFormattedTextField1" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="masterScrollPane" pref="574" max="32767" attributes="0"/>
@@ -150,7 +152,7 @@
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="descontoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="descontoField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jFormattedTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -179,6 +181,7 @@
                   <Component id="deleteButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="newButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="dateCellRender1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
@@ -230,7 +233,9 @@
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>
-                  <Renderer/>
+                  <Renderer editor="org.netbeans.modules.form.ComponentChooserEditor">
+                    <ComponentRef name="dateCellRender1"/>
+                  </Renderer>
                 </Column>
               </TableColumnModel>
             </Property>
@@ -248,10 +253,6 @@
                 <BindingParameter name="NAME" value="Valor"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Float.class"/>
               </Subbinding>
-              <Subbinding sourcePath="${desconto}">
-                <BindingParameter name="NAME" value="Desconto"/>
-                <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Float.class"/>
-              </Subbinding>
               <Subbinding sourcePath="${produto}">
                 <BindingParameter name="NAME" value="Produto"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
@@ -267,6 +268,10 @@
               <Subbinding sourcePath="${funcionario}">
                 <BindingParameter name="NAME" value="Funcionario"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="view.Funcionario.class"/>
+              </Subbinding>
+              <Subbinding sourcePath="${dataCompra}">
+                <BindingParameter name="NAME" value="Data Compra"/>
+                <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="java.util.Date.class"/>
               </Subbinding>
             </BindingProperty>
           </BindingProperties>
@@ -289,7 +294,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="descontoLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Desconto:"/>
+        <Property name="text" type="java.lang.String" value="Data"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="produtoLabel">
@@ -326,14 +331,6 @@
           <Property name="incompletePathValue" type="java.lang.String" value="null"/>
         </BindingProperty>
         <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="valorField" targetPath="enabled" updateStrategy="1" immediately="false"/>
-      </BindingProperties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="descontoField">
-      <BindingProperties>
-        <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.desconto}" target="descontoField" targetPath="text" updateStrategy="0" immediately="false">
-          <Property name="incompletePathValue" type="java.lang.String" value="null"/>
-        </BindingProperty>
-        <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="descontoField" targetPath="enabled" updateStrategy="1" immediately="false"/>
       </BindingProperties>
     </Component>
     <Component class="javax.swing.JTextField" name="produtoField">
@@ -430,6 +427,25 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
+      <Properties>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+          <Format subtype="0" type="1"/>
+        </Property>
+      </Properties>
+      <BindingProperties>
+        <BindingProperty name="value" source="masterTable" sourcePath="${selectedElement.dataCompra}" target="jFormattedTextField1" targetPath="value" updateStrategy="0" immediately="false"/>
+        <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="jFormattedTextField1" targetPath="enabled" updateStrategy="0" immediately="false"/>
+      </BindingProperties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextField1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="render.DateCellRender" name="dateCellRender1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="dateCellRender1"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

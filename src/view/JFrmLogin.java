@@ -7,10 +7,7 @@ package view;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Mirela Domiciano
- */
+
 public class JFrmLogin extends javax.swing.JFrame {
 
     /**
