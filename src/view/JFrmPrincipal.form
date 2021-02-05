@@ -26,6 +26,11 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
     </Container>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="99" red="99" type="rgb"/>
+        </Property>
+      </Properties>
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu1">
           <Properties>
@@ -38,7 +43,7 @@
                   <KeyStroke key="Shift+Ctrl+C"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img_atv/cliente.png"/>
+                  <Image iconType="3" name="/img_atv/pessoa-de-negocios (2).png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cliente"/>
               </Properties>
@@ -66,7 +71,7 @@
                   <KeyStroke key="Shift+U"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img_atv/user.png"/>
+                  <Image iconType="3" name="/img_atv/user (1).png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Usu&#xe1;rio"/>
               </Properties>
@@ -86,6 +91,9 @@
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Shift+C"/>
                 </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/img_atv/abra-o-livro.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cliente"/>
               </Properties>
             </MenuItem>
@@ -94,6 +102,9 @@
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Shift+F"/>
                 </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/img_atv/abra-o-livro.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Funcionario"/>
               </Properties>
             </MenuItem>
@@ -101,6 +112,9 @@
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Ctrl+ENTER"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/img_atv/abra-o-livro.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Compras "/>
               </Properties>
@@ -118,7 +132,7 @@
                   <KeyStroke key="Ctrl+SPACE"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img_atv/compras.png"/>
+                  <Image iconType="3" name="/img_atv/carrinho3.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Compra"/>
               </Properties>
@@ -167,6 +181,14 @@
   <SubComponents>
     <Container class="javax.swing.JToolBar" name="jToolBar3">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder thickness="2"/>
+          </Border>
+        </Property>
         <Property name="rollover" type="boolean" value="true"/>
       </Properties>
 
@@ -174,8 +196,11 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="99" red="99" type="rgb"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/img_atv/cliente1.png"/>
+              <Image iconType="3" name="/img_atv/pessoa-de-negocios (3).png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Cadastrar cliente"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -188,8 +213,11 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="99" red="99" type="rgb"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/img_atv/funci.png"/>
+              <Image iconType="3" name="/img_atv/funcionario1.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Cadastrar funcion&#xe1;rio"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -202,8 +230,11 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="99" red="99" type="rgb"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/img_atv/compras1.png"/>
+              <Image iconType="3" name="/img_atv/carrinho2.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Cadastrar compra"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -216,14 +247,19 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton4">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="99" red="99" type="rgb"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/img_atv/relatorio.png"/>
+              <Image iconType="3" name="/img_atv/relatorio_1.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Relat&#xf3;rios"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
-            <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

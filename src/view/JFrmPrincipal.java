@@ -53,9 +53,12 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
 
+        jToolBar3.setBackground(new java.awt.Color(153, 153, 255));
+        jToolBar3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jToolBar3.setRollover(true);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_atv/cliente1.png"))); // NOI18N
+        jButton1.setBackground(new java.awt.Color(153, 153, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_atv/pessoa-de-negocios (3).png"))); // NOI18N
         jButton1.setToolTipText("Cadastrar cliente");
         jButton1.setFocusable(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -67,7 +70,8 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         });
         jToolBar3.add(jButton1);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_atv/funci.png"))); // NOI18N
+        jButton2.setBackground(new java.awt.Color(153, 153, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_atv/funcionario1.png"))); // NOI18N
         jButton2.setToolTipText("Cadastrar funcionário");
         jButton2.setFocusable(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -79,7 +83,8 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         });
         jToolBar3.add(jButton2);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_atv/compras1.png"))); // NOI18N
+        jButton3.setBackground(new java.awt.Color(153, 153, 255));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_atv/carrinho2.png"))); // NOI18N
         jButton3.setToolTipText("Cadastrar compra");
         jButton3.setFocusable(false);
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -91,17 +96,24 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         });
         jToolBar3.add(jButton3);
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_atv/relatorio.png"))); // NOI18N
+        jButton4.setBackground(new java.awt.Color(153, 153, 255));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_atv/relatorio_1.png"))); // NOI18N
         jButton4.setToolTipText("Relatórios");
         jButton4.setFocusable(false);
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jToolBar3.add(jButton4);
+
+        jMenuBar1.setBackground(new java.awt.Color(153, 153, 255));
 
         jMenu1.setText("Cadastros");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_atv/cliente.png"))); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_atv/pessoa-de-negocios (2).png"))); // NOI18N
         jMenuItem1.setText("Cliente");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,7 +133,7 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem2);
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.SHIFT_MASK));
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_atv/user.png"))); // NOI18N
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_atv/user (1).png"))); // NOI18N
         jMenuItem3.setText("Usuário");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,14 +147,17 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         jMenu2.setText("Relatórios");
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK));
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_atv/abra-o-livro.png"))); // NOI18N
         jMenuItem4.setText("Cliente");
         jMenu2.add(jMenuItem4);
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.SHIFT_MASK));
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_atv/abra-o-livro.png"))); // NOI18N
         jMenuItem5.setText("Funcionario");
         jMenu2.add(jMenuItem5);
 
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ENTER, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_atv/abra-o-livro.png"))); // NOI18N
         jMenuItem6.setText("Compras ");
         jMenu2.add(jMenuItem6);
 
@@ -151,7 +166,7 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         jMenu4.setText("Agenda");
 
         jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SPACE, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_atv/compras.png"))); // NOI18N
+        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_atv/carrinho3.png"))); // NOI18N
         jMenuItem8.setText("Compra");
         jMenu4.add(jMenuItem8);
 
@@ -203,6 +218,10 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         JFrmCadFuncionario.main(null);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
