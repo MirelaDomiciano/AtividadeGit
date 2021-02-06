@@ -21,6 +21,8 @@ public class DateCellRender extends DefaultTableCellRenderer{
         if(value instanceof Date){
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             setValue(sdf.format(value));
+        }else{
+            setValue("Preencha esse campo");
         }
         
         return this;
