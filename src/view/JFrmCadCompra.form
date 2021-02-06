@@ -332,9 +332,6 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JTextField" name="produtoField">
-          <Properties>
-            <Property name="text" type="java.lang.String" value=""/>
-          </Properties>
           <BindingProperties>
             <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.produto}" target="produtoField" targetPath="text" updateStrategy="0" immediately="false">
               <Property name="incompletePathValue" type="java.lang.String" value="null"/>
@@ -368,9 +365,6 @@
           </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="idCompraField">
-          <Properties>
-            <Property name="text" type="java.lang.String" value=""/>
-          </Properties>
           <BindingProperties>
             <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.idCompra}" target="idCompraField" targetPath="text" updateStrategy="0" immediately="false">
               <Property name="incompletePathValue" type="java.lang.String" value="null"/>
@@ -382,9 +376,6 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="quantidadeField">
-          <Properties>
-            <Property name="text" type="java.lang.String" value=""/>
-          </Properties>
           <BindingProperties>
             <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.quantidade}" target="quantidadeField" targetPath="text" updateStrategy="0" immediately="false">
               <Property name="incompletePathValue" type="java.lang.String" value="null"/>
@@ -422,9 +413,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="valorField">
-          <Properties>
-            <Property name="text" type="java.lang.String" value=""/>
-          </Properties>
           <BindingProperties>
             <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.valor}" target="valorField" targetPath="text" updateStrategy="0" immediately="false">
               <Property name="incompletePathValue" type="java.lang.String" value="null"/>
