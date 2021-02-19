@@ -1,0 +1,14 @@
+
+Persistence.xml e Classe Conexão com senhas diferentes (xammp e vertrigo)
+Formulário para exibir relatório com parâmentros não estava centralizado.
+Menu relatórios do formulário principal não funciona.
+
+renderizador ok
+login ok
+splash ok
+
+
+Wizard ok
+Blank ok
+Relatórios 2 tabelas: ok
+relatorios parâmetros: ok
